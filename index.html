@@ -3,1525 +3,1407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>বাংলাদেশ পত্রিকা ডিরেক্টরি</title>
+<title>বাংলাদেশ পত্রিকা — ডিরেক্টরি</title>
 
 <style>
-
-/* =========================
-   BASIC RESET
-========================= */
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --primary:#075e45;
+  --primary2:#087f5b;
+  --blue:#164e8c;
+  --bg:#f5f7f9;
+  --card:#ffffff;
+  --text:#17212b;
+  --muted:#6b7280;
+  --border:#e4e8ed;
+  --soft:#edf7f3;
 }
 
 body{
-    font-family:
-    "Noto Sans Bengali",
-    "SolaimanLipi",
-    Arial,
-    sans-serif;
-
-    background:#f4f6f8;
-    color:#17202a;
-
-    transition:0.3s;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-button,
-input{
-    font-family:inherit;
+body.dark{
+  --bg:#10151c;
+  --card:#1a212b;
+  --text:#f1f5f9;
+  --muted:#9ca7b3;
+  --border:#303946;
+  --soft:#16392f;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:#ffffff;
-
-    border-bottom:1px solid #e5e7eb;
-
-    padding:14px 16px;
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,var(--primary),var(--blue));
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px rgba(0,0,0,.12);
 }
 
 .header-inner{
-
-    max-width:1100px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:15px;
+  max-width:1100px;
+  margin:auto;
+  padding:14px;
 }
 
-.logo{
-
-    font-size:21px;
-    font-weight:800;
-
-    white-space:nowrap;
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
 }
 
-.logo span{
-    font-size:13px;
-    display:block;
-    font-weight:400;
-    color:#6b7280;
+.brand{
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
 }
 
-.header-buttons{
-    display:flex;
-    gap:8px;
+.dark-btn{
+  border:0;
+  background:rgba(255,255,255,.17);
+  color:white;
+  border-radius:20px;
+  padding:7px 11px;
+  cursor:pointer;
 }
 
-.icon-btn{
-
-    border:none;
-
-    background:#f1f3f5;
-
-    width:40px;
-    height:40px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    font-size:18px;
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-main{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:20px 16px 60px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-
-    background:
-    linear-gradient(135deg,#17202a,#34495e);
-
-    color:white;
-
-    border-radius:24px;
-
-    padding:32px 22px;
-
-    margin-bottom:22px;
-
-    overflow:hidden;
-}
-
-.hero h1{
-
-    font-size:30px;
-
-    line-height:1.3;
-
-    margin-bottom:10px;
-}
-
-.hero p{
-
-    color:#dfe6e9;
-
-    line-height:1.7;
-
-    margin-bottom:20px;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
+/* SEARCH */
 .search-box{
-
-    background:white;
-
-    border-radius:14px;
-
-    padding:6px;
-
-    display:flex;
-
-    max-width:650px;
+  margin-top:14px;
+  position:relative;
 }
 
 .search-box input{
-
-    flex:1;
-
-    border:none;
-
-    outline:none;
-
-    padding:13px;
-
-    font-size:15px;
-
-    color:#222;
-
+  width:100%;
+  border:0;
+  outline:0;
+  padding:14px 45px 14px 16px;
+  border-radius:13px;
+  font-size:15px;
+  background:white;
+  color:#222;
 }
 
-.search-box button{
-
-    border:none;
-
-    background:#17202a;
-
-    color:white;
-
-    padding:0 18px;
-
-    border-radius:10px;
-
-    cursor:pointer;
+.search-icon{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:21px;
 }
 
-
-/* =========================
-   CATEGORY
-========================= */
-
-.section-title{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin:25px 0 14px;
+/* MAIN */
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:22px 14px 50px;
 }
 
-.section-title h2{
-
-    font-size:21px;
+.page{
+  display:none;
 }
 
-.section-title span{
-
-    color:#6b7280;
-
-    font-size:13px;
+.page.active{
+  display:block;
 }
 
-
-.categories{
-
-    display:flex;
-
-    gap:10px;
-
-    overflow-x:auto;
-
-    padding-bottom:5px;
-
-    scrollbar-width:none;
+/* HOME HERO */
+.hero{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:23px 18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.04);
 }
 
-.categories::-webkit-scrollbar{
-    display:none;
+.hero h1{
+  font-size:27px;
+  margin-bottom:7px;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* SECTION */
+.section{
+  margin-bottom:26px;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:13px;
+}
+
+.section-head h2{
+  font-size:20px;
+}
+
+.see-all{
+  color:var(--primary2);
+  border:0;
+  background:none;
+  font-size:13px;
+  cursor:pointer;
+}
+
+/* CATEGORY */
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 
 .category{
-
-    flex:0 0 auto;
-
-    border:1px solid #dfe3e8;
-
-    background:white;
-
-    padding:11px 17px;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    font-size:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:15px 8px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.category.active{
-
-    background:#17202a;
-
-    color:white;
-
-    border-color:#17202a;
+.category:hover{
+  transform:translateY(-2px);
 }
 
-
-/* =========================
-   FEATURED CARD
-========================= */
-
-.featured{
-
-    background:white;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    border:1px solid #e5e7eb;
-
-    margin-top:18px;
+.category-icon{
+  font-size:25px;
+  display:block;
+  margin-bottom:4px;
 }
 
-.featured-image{
-
-    width:100%;
-
-    height:230px;
-
-    object-fit:cover;
-
-    display:block;
+.category-title{
+  font-weight:700;
+  font-size:14px;
 }
 
-.featured-content{
-
-    padding:20px;
+/* AREA */
+.area-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
 }
 
-.featured-content h3{
-
-    font-size:23px;
-
-    margin-bottom:8px;
+.area{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:11px 5px;
+  text-align:center;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:13px;
 }
 
-.featured-content p{
-
-    color:#667085;
-
-    line-height:1.7;
-
-    margin-bottom:15px;
+.area:hover{
+  border-color:var(--primary2);
 }
 
-
-/* =========================
-   NEWSPAPER GRID
-========================= */
-
-.news-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fill,minmax(210px,1fr));
-
-    gap:16px;
+/* CARDS */
+.newspaper-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
 
-
-/* =========================
-   NEWSPAPER CARD
-========================= */
-
-.news-card{
-
-    background:white;
-
-    border:1px solid #e5e7eb;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    cursor:pointer;
-
-    transition:0.25s;
-
-    box-shadow:0 3px 12px rgba(0,0,0,0.04);
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 4px 14px rgba(0,0,0,.04);
 }
 
-.news-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.09);
+.card:hover{
+  transform:translateY(-3px);
 }
 
-.card-image{
+.card-img{
+  height:135px;
+  background:#e8edf1;
+  overflow:hidden;
+}
 
-    width:100%;
-
-    height:180px;
-
-    object-fit:cover;
-
-    display:block;
+.card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .card-body{
-
-    padding:15px;
+  padding:11px;
 }
 
-.card-category{
-
-    display:inline-block;
-
-    font-size:11px;
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    background:#eef1f4;
-
-    margin-bottom:9px;
-}
-
-.card-title{
-
-    font-size:18px;
-
-    margin-bottom:7px;
-
-    line-height:1.4;
+.card-name{
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:2px;
 }
 
 .card-location{
-
-    font-size:13px;
-
-    color:#667085;
-
-    margin-bottom:14px;
+  color:var(--muted);
+  font-size:12px;
 }
 
-.details-btn{
-
-    width:100%;
-
-    border:none;
-
-    padding:11px;
-
-    border-radius:11px;
-
-    background:#17202a;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:14px;
+.badge{
+  display:inline-block;
+  margin-top:7px;
+  padding:3px 8px;
+  border-radius:12px;
+  background:var(--soft);
+  color:var(--primary2);
+  font-size:11px;
 }
 
-
-/* =========================
-   DETAILS PAGE
-========================= */
-
-#detailsPage{
-
-    display:none;
-}
-
+/* LIST PAGE */
 .back-btn{
-
-    border:none;
-
-    background:white;
-
-    border:1px solid #e2e6ea;
-
-    padding:10px 16px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    margin-bottom:18px;
+  border:0;
+  background:none;
+  color:var(--primary2);
+  font-size:15px;
+  cursor:pointer;
+  margin-bottom:13px;
 }
 
-.details-container{
-
-    background:white;
-
-    border-radius:24px;
-
-    overflow:hidden;
-
-    border:1px solid #e5e7eb;
+.page-title{
+  font-size:25px;
+  margin-bottom:4px;
 }
 
-.details-cover{
+.page-subtitle{
+  color:var(--muted);
+  margin-bottom:18px;
+  font-size:14px;
+}
 
-    width:100%;
+.filter-row{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  margin-bottom:18px;
+}
 
-    height:330px;
+.filter{
+  white-space:nowrap;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+}
 
-    object-fit:cover;
+.filter.active{
+  background:var(--primary2);
+  color:white;
+  border-color:var(--primary2);
+}
+
+/* DETAILS */
+.details{
+  max-width:700px;
+  margin:auto;
+}
+
+.details-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.details-image{
+  height:260px;
+  background:#e8edf1;
+}
+
+.details-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .details-content{
-
-    padding:25px;
+  padding:20px;
 }
 
-.details-category{
-
-    display:inline-block;
-
-    background:#eef1f4;
-
-    padding:6px 10px;
-
-    border-radius:20px;
-
-    font-size:12px;
-
-    margin-bottom:12px;
-}
-
-.details-title{
-
-    font-size:30px;
-
-    margin-bottom:10px;
+.details-name{
+  font-size:28px;
+  font-weight:800;
 }
 
 .details-meta{
-
-    color:#667085;
-
-    line-height:2;
-
-    margin-bottom:22px;
+  color:var(--muted);
+  margin-top:3px;
 }
 
-.article{
-
-    border-top:1px solid #e5e7eb;
-
-    padding-top:22px;
-
-    line-height:1.9;
-
-    color:#343a40;
+.details-description{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
 }
 
-.article h3{
-
-    margin-bottom:10px;
-
-    font-size:21px;
+.main-button{
+  display:block;
+  width:100%;
+  border:0;
+  background:linear-gradient(135deg,var(--primary2),var(--blue));
+  color:white;
+  padding:14px;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+  margin-top:20px;
 }
 
-.read-btn{
-
-    display:block;
-
-    text-decoration:none;
-
-    text-align:center;
-
-    margin-top:25px;
-
-    padding:15px;
-
-    border-radius:14px;
-
-    background:#17202a;
-
-    color:white;
-
-    font-weight:700;
+.share-button{
+  width:100%;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:12px;
+  border-radius:12px;
+  margin-top:9px;
+  cursor:pointer;
 }
 
+/* LOCATION */
+.location-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+}
 
-/* =========================
-   EMPTY RESULT
-========================= */
+.location-step{
+  padding:13px;
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+}
 
+.location-step:last-child{
+  border-bottom:0;
+}
+
+.location-step strong{
+  display:block;
+}
+
+.location-step span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* FORM */
+.form-box{
+  max-width:650px;
+  margin:auto;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+}
+
+.form-group{
+  margin-bottom:15px;
+}
+
+.form-group label{
+  display:block;
+  font-weight:700;
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--bg);
+  color:var(--text);
+  outline:none;
+  font-family:inherit;
+}
+
+.form-group textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+/* ABOUT */
+.about-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+}
+
+.about-box h2{
+  margin-bottom:10px;
+}
+
+.about-box p{
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
+/* EMPTY */
 .empty{
-
-    display:none;
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:35px;
-
-    text-align:center;
-
-    color:#667085;
+  text-align:center;
+  padding:45px 10px;
+  color:var(--muted);
+  grid-column:1/-1;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
-
-    margin-top:45px;
-
-    padding:25px 15px;
-
-    text-align:center;
-
-    color:#667085;
-
-    border-top:1px solid #e5e7eb;
-
-    line-height:1.8;
+  text-align:center;
+  padding:25px 15px;
+  color:var(--muted);
+  font-size:12px;
 }
 
-
-/* =========================
-   DARK MODE
-========================= */
-
-body.dark{
-
-    background:#101418;
-
-    color:#f5f5f5;
+/* MOBILE */
+@media(max-width:800px){
+  .newspaper-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
 }
 
-body.dark header,
-body.dark .news-card,
-body.dark .featured,
-body.dark .details-container,
-body.dark .category,
-body.dark .empty,
-body.dark .back-btn{
+@media(max-width:560px){
+  .newspaper-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
 
-    background:#181d22;
+  .card-img{
+    height:110px;
+  }
 
-    border-color:#2c333a;
+  .card-name{
+    font-size:14px;
+  }
 
-    color:white;
+  .category-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .area-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:23px;
+  }
+
+  .details-image{
+    height:210px;
+  }
 }
-
-body.dark .card-location,
-body.dark .featured-content p,
-body.dark .details-meta{
-
-    color:#aab2bb;
-}
-
-body.dark .article{
-
-    color:#d8dde2;
-
-    border-color:#2c333a;
-}
-
-body.dark .icon-btn{
-
-    background:#252b31;
-
-    color:white;
-}
-
-body.dark .category.active{
-
-    background:white;
-
-    color:#111;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:600px){
-
-    .hero{
-
-        padding:25px 18px;
-
-        border-radius:20px;
-    }
-
-    .hero h1{
-
-        font-size:25px;
-    }
-
-    .news-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-        gap:11px;
-    }
-
-    .card-image{
-
-        height:135px;
-    }
-
-    .card-body{
-
-        padding:11px;
-    }
-
-    .card-title{
-
-        font-size:15px;
-    }
-
-    .details-cover{
-
-        height:240px;
-    }
-
-    .details-content{
-
-        padding:18px;
-    }
-
-    .details-title{
-
-        font-size:25px;
-    }
-
-    .search-box button{
-
-        padding:0 13px;
-    }
-}
-
 </style>
 </head>
 
-
 <body>
 
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
 
-<!-- =====================================================
-     HEADER
-====================================================== -->
+    <div class="topbar">
+      <div class="brand" onclick="showPage('home')">
+        📰 বাংলাদেশ পত্রিকা
+      </div>
 
-<header>
-
-<div class="header-inner">
-
-    <div class="logo">
-
-        📰 বাংলা পত্রিকা
-
-        <span>বাংলাদেশের সংবাদপত্র ডিরেক্টরি</span>
-
-    </div>
-
-
-    <div class="header-buttons">
-
-        <button
-        class="icon-btn"
-        onclick="toggleDarkMode()">
-
+      <button class="dark-btn" onclick="toggleDark()">
         🌙
-
-        </button>
-
+      </button>
     </div>
 
-</div>
+    <div class="search-box">
+      <input
+        id="globalSearch"
+        type="search"
+        placeholder="পত্রিকার নাম, জেলা বা এলাকা খুঁজুন..."
+        oninput="searchNewspapers()"
+      >
+      <span class="search-icon">🔍</span>
+    </div>
 
+  </div>
 </header>
 
 
+<main>
 
-<!-- =====================================================
-     HOME PAGE
-====================================================== -->
+<!-- ================= HOME ================= -->
 
-<main id="homePage">
+<section id="home" class="page active">
 
-
-<!-- HERO -->
-
-<section class="hero">
-
-<h1>
-বাংলাদেশের পত্রিকা<br>
-এক জায়গায়
-</h1>
-
-<p>
-দৈনিক, সাপ্তাহিক, মাসিক ও বিভিন্ন
-ধরনের পত্রিকা সহজে খুঁজে দেখুন।
-</p>
+  <div class="hero">
+    <h1>বাংলাদেশের পত্রিকা এক জায়গায়</h1>
+    <p>
+      দৈনিক, সাপ্তাহিক, মাসিক, ইসলামিক, অনলাইন ও আঞ্চলিক
+      পত্রিকা সহজে খুঁজে দেখুন।
+    </p>
+  </div>
 
 
-<div class="search-box">
+  <!-- CATEGORY -->
 
-<input
-type="text"
-id="searchInput"
-placeholder="পত্রিকার নাম লিখে খুঁজুন...">
+  <div class="section">
 
-<button onclick="searchNewspapers()">
+    <div class="section-head">
+      <h2>📂 ক্যাটাগরি</h2>
+      <button class="see-all" onclick="showPage('category')">
+        সব দেখুন →
+      </button>
+    </div>
 
-🔎 খুঁজুন
+    <div class="category-grid">
 
-</button>
+      <div class="category" onclick="openCategory('দৈনিক')">
+        <span class="category-icon">📰</span>
+        <span class="category-title">দৈনিক</span>
+      </div>
 
-</div>
+      <div class="category" onclick="openCategory('সাপ্তাহিক')">
+        <span class="category-icon">📅</span>
+        <span class="category-title">সাপ্তাহিক</span>
+      </div>
 
-</section>
+      <div class="category" onclick="openCategory('মাসিক')">
+        <span class="category-icon">📖</span>
+        <span class="category-title">মাসিক</span>
+      </div>
 
+      <div class="category" onclick="openCategory('ইসলামিক')">
+        <span class="category-icon">☪️</span>
+        <span class="category-title">ইসলামিক</span>
+      </div>
 
+      <div class="category" onclick="openCategory('অনলাইন')">
+        <span class="category-icon">🌐</span>
+        <span class="category-title">অনলাইন</span>
+      </div>
 
-<!-- CATEGORY -->
+      <div class="category" onclick="openCategory('আঞ্চলিক')">
+        <span class="category-icon">📍</span>
+        <span class="category-title">আঞ্চলিক</span>
+      </div>
 
-<div class="section-title">
-
-<h2>ক্যাটাগরি</h2>
-
-<span>আপনার পছন্দ নির্বাচন করুন</span>
-
-</div>
-
-
-<div class="categories">
-
-<button
-class="category active"
-onclick="filterCategory('সব',this)">
-
-সব
-
-</button>
-
-<button
-class="category"
-onclick="filterCategory('দৈনিক',this)">
-
-📰 দৈনিক
-
-</button>
-
-<button
-class="category"
-onclick="filterCategory('সাপ্তাহিক',this)">
-
-📅 সাপ্তাহিক
-
-</button>
-
-<button
-class="category"
-onclick="filterCategory('মাসিক',this)">
-
-📖 মাসিক
-
-</button>
-
-<button
-class="category"
-onclick="filterCategory('ইসলামিক',this)">
-
-☪ ইসলামিক
-
-</button>
-
-</div>
+    </div>
+  </div>
 
 
+  <!-- AREA -->
 
-<!-- FEATURED -->
+  <div class="section">
 
-<section>
+    <div class="section-head">
+      <h2>📍 জনপ্রিয় এলাকা</h2>
+      <button class="see-all" onclick="showPage('location')">
+        সব এলাকা →
+      </button>
+    </div>
 
-<div class="section-title">
+    <div class="area-grid">
 
-<h2>আজকের নির্বাচিত</h2>
+      <div class="area" onclick="openLocation('ঢাকা')">ঢাকা</div>
+      <div class="area" onclick="openLocation('চট্টগ্রাম')">চট্টগ্রাম</div>
+      <div class="area" onclick="openLocation('রাজশাহী')">রাজশাহী</div>
+      <div class="area" onclick="openLocation('খুলনা')">খুলনা</div>
+      <div class="area" onclick="openLocation('বরিশাল')">বরিশাল</div>
+      <div class="area" onclick="openLocation('সিলেট')">সিলেট</div>
+      <div class="area" onclick="openLocation('রংপুর')">রংপুর</div>
+      <div class="area" onclick="openLocation('ময়মনসিংহ')">ময়মনসিংহ</div>
 
-<span>Featured</span>
+    </div>
+  </div>
 
-</div>
+
+  <!-- POPULAR NEWSPAPERS -->
+
+  <div class="section">
+
+    <div class="section-head">
+      <h2>⭐ জনপ্রিয় পত্রিকা</h2>
+      <button class="see-all" onclick="showPage('category')">
+        সব দেখুন →
+      </button>
+    </div>
+
+    <div id="homeGrid" class="newspaper-grid"></div>
+
+  </div>
 
 
-<div class="featured">
+  <!-- ADD -->
 
-<img
-class="featured-image"
-src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80"
-alt="সংবাদপত্র">
+  <div class="section">
 
-<div class="featured-content">
+    <div class="form-box" style="text-align:center">
 
-<h3>
-বাংলাদেশের সংবাদপত্র
-</h3>
+      <div style="font-size:35px">➕</div>
 
-<p>
-বিভিন্ন ধরনের সংবাদপত্র, প্রকাশনা ও
-পত্রিকার তথ্য এক জায়গায় খুঁজে পাওয়ার
-সহজ একটি ডিরেক্টরি।
-</p>
+      <h2>আপনার পত্রিকা যোগ করুন</h2>
 
-</div>
+      <p style="color:var(--muted);font-size:13px;margin:5px 0 15px">
+        আপনার পত্রিকার তথ্য আমাদের ডিরেক্টরিতে যুক্ত করার জন্য পাঠান।
+      </p>
 
-</div>
+      <button class="main-button" onclick="showPage('add')">
+        পত্রিকা যোগ করার ফর্ম
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 
 
+<!-- ================= CATEGORY ================= -->
 
-<!-- NEWSPAPERS -->
+<section id="category" class="page">
 
-<section>
+  <button class="back-btn" onclick="showPage('home')">
+    ← হোমে ফিরে যান
+  </button>
 
-<div class="section-title">
+  <h1 class="page-title" id="categoryTitle">
+    সকল পত্রিকা
+  </h1>
 
-<h2 id="categoryTitle">
-সব পত্রিকা
-</h2>
+  <p class="page-subtitle">
+    ক্যাটাগরি অনুযায়ী পত্রিকা খুঁজে দেখুন।
+  </p>
 
-<span id="resultCount"></span>
+  <div class="filter-row">
 
-</div>
+    <button class="filter active" onclick="filterCategory('সব',this)">
+      সব
+    </button>
 
+    <button class="filter" onclick="filterCategory('দৈনিক',this)">
+      দৈনিক
+    </button>
 
-<div
-class="news-grid"
-id="newsGrid">
+    <button class="filter" onclick="filterCategory('সাপ্তাহিক',this)">
+      সাপ্তাহিক
+    </button>
 
-</div>
+    <button class="filter" onclick="filterCategory('মাসিক',this)">
+      মাসিক
+    </button>
 
+    <button class="filter" onclick="filterCategory('ইসলামিক',this)">
+      ইসলামিক
+    </button>
 
-<div
-class="empty"
-id="emptyResult">
+    <button class="filter" onclick="filterCategory('অনলাইন',this)">
+      অনলাইন
+    </button>
 
-😔
+    <button class="filter" onclick="filterCategory('আঞ্চলিক',this)">
+      আঞ্চলিক
+    </button>
 
-কোনো পত্রিকা পাওয়া যায়নি।
+  </div>
 
-</div>
+  <div id="categoryGrid" class="newspaper-grid"></div>
 
 </section>
 
 
+<!-- ================= LOCATION ================= -->
 
-<footer>
+<section id="location" class="page">
 
-বাংলা পত্রিকা ডিরেক্টরি
+  <button class="back-btn" onclick="showPage('home')">
+    ← হোমে ফিরে যান
+  </button>
 
-<br>
+  <h1 class="page-title">📍 এলাকা অনুযায়ী পত্রিকা</h1>
 
-তথ্য সংগ্রহ ও উপস্থাপনা
+  <p class="page-subtitle">
+    বিভাগ → জেলা → উপজেলা/থানা অনুযায়ী পত্রিকা খুঁজুন।
+  </p>
 
-<br>
+  <div class="location-box">
 
-© 2026
+    <div class="location-step" onclick="showDivision('ঢাকা')">
+      <strong>🏙 ঢাকা বিভাগ</strong>
+      <span>ঢাকা, গাজীপুর, নারায়ণগঞ্জসহ অন্যান্য জেলা</span>
+    </div>
 
-</footer>
+    <div class="location-step" onclick="showDivision('চট্টগ্রাম')">
+      <strong>🏙 চট্টগ্রাম বিভাগ</strong>
+      <span>চট্টগ্রাম, কুমিল্লা, নোয়াখালীসহ অন্যান্য জেলা</span>
+    </div>
 
+    <div class="location-step" onclick="showDivision('রাজশাহী')">
+      <strong>🏙 রাজশাহী বিভাগ</strong>
+      <span>রাজশাহী, বগুড়া, নওগাঁসহ অন্যান্য জেলা</span>
+    </div>
+
+    <div class="location-step" onclick="showDivision('খুলনা')">
+      <strong>🏙 খুলনা বিভাগ</strong>
+      <span>খুলনা, যশোর, কুষ্টিয়াসহ অন্যান্য জেলা</span>
+    </div>
+
+    <div class="location-step" onclick="showDivision('বরিশাল')">
+      <strong>🏙 বরিশাল বিভাগ</strong>
+      <span>বরিশাল, পটুয়াখালীসহ অন্যান্য জেলা</span>
+    </div>
+
+    <div class="location-step" onclick="showDivision('সিলেট')">
+      <strong>🏙 সিলেট বিভাগ</strong>
+      <span>সিলেট, মৌলভীবাজারসহ অন্যান্য জেলা</span>
+    </div>
+
+    <div class="location-step" onclick="showDivision('রংপুর')">
+      <strong>🏙 রংপুর বিভাগ</strong>
+      <span>রংপুর, দিনাজপুরসহ অন্যান্য জেলা</span>
+    </div>
+
+    <div class="location-step" onclick="showDivision('ময়মনসিংহ')">
+      <strong>🏙 ময়মনসিংহ বিভাগ</strong>
+      <span>ময়মনসিংহ, জামালপুরসহ অন্যান্য জেলা</span>
+    </div>
+
+  </div>
+
+  <div id="locationResults" style="margin-top:20px"></div>
+
+</section>
+
+
+<!-- ================= DETAILS ================= -->
+
+<section id="details" class="page">
+
+  <div class="details">
+
+    <button class="back-btn" onclick="showPage('category')">
+      ← পত্রিকার তালিকায় ফিরে যান
+    </button>
+
+    <div id="detailsContent"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section id="searchPage" class="page">
+
+  <button class="back-btn" onclick="showPage('home')">
+    ← হোমে ফিরে যান
+  </button>
+
+  <h1 class="page-title">🔎 অনুসন্ধানের ফলাফল</h1>
+
+  <p class="page-subtitle" id="searchText"></p>
+
+  <div id="searchGrid" class="newspaper-grid"></div>
+
+</section>
+
+
+<!-- ================= ADD ================= -->
+
+<section id="add" class="page">
+
+  <button class="back-btn" onclick="showPage('home')">
+    ← হোমে ফিরে যান
+  </button>
+
+  <h1 class="page-title">➕ আপনার পত্রিকা যোগ করুন</h1>
+
+  <p class="page-subtitle">
+    নিচের তথ্য পূরণ করে পত্রিকার তথ্য পাঠানোর জন্য প্রস্তুত করুন।
+  </p>
+
+  <div class="form-box">
+
+    <div class="form-group">
+      <label>পত্রিকার নাম</label>
+      <input id="addName" type="text" placeholder="পত্রিকার নাম">
+    </div>
+
+    <div class="form-group">
+      <label>ক্যাটাগরি</label>
+      <select id="addCategory">
+        <option>দৈনিক</option>
+        <option>সাপ্তাহিক</option>
+        <option>মাসিক</option>
+        <option>ইসলামিক</option>
+        <option>অনলাইন</option>
+        <option>আঞ্চলিক</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>বিভাগ</label>
+      <input id="addDivision" type="text" placeholder="যেমন: রাজশাহী">
+    </div>
+
+    <div class="form-group">
+      <label>জেলা</label>
+      <input id="addDistrict" type="text" placeholder="যেমন: নওগাঁ">
+    </div>
+
+    <div class="form-group">
+      <label>লোগো / ছবির URL</label>
+      <input id="addImage" type="url" placeholder="https://...">
+    </div>
+
+    <div class="form-group">
+      <label>অফিসিয়াল ওয়েবসাইট</label>
+      <input id="addWebsite" type="url" placeholder="https://...">
+    </div>
+
+    <div class="form-group">
+      <label>সংক্ষিপ্ত পরিচিতি</label>
+      <textarea id="addDescription" placeholder="পত্রিকা সম্পর্কে সংক্ষিপ্ত তথ্য"></textarea>
+    </div>
+
+    <button class="main-button" onclick="submitForm()">
+      তথ্য পাঠানোর প্রস্তুতি নিন
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="page">
+
+  <button class="back-btn" onclick="showPage('home')">
+    ← হোমে ফিরে যান
+  </button>
+
+  <div class="about-box">
+
+    <h2>ℹ️ বাংলাদেশ পত্রিকা ডিরেক্টরি</h2>
+
+    <p>
+      বাংলাদেশের বিভিন্ন ধরনের পত্রিকা এক জায়গায়
+      খুঁজে পাওয়ার জন্য এই ডিরেক্টরি তৈরি করা হয়েছে।
+    </p>
+
+    <p>
+      ব্যবহারকারী পত্রিকার নাম, ক্যাটাগরি, বিভাগ,
+      জেলা বা এলাকা অনুযায়ী পত্রিকা খুঁজে দেখতে পারবেন।
+    </p>
+
+    <p>
+      প্রতিটি পত্রিকার বিস্তারিত তথ্য দেখার পর
+      “পত্রিকাটি পড়ুন” বাটনের মাধ্যমে মূল পত্রিকার
+      অফিসিয়াল ওয়েবসাইটে যেতে পারবেন।
+    </p>
+
+    <p>
+      ভবিষ্যতে এই ডিরেক্টরির তথ্য Google Sheets-এর
+      মাধ্যমে পরিচালনা করা যাবে।
+    </p>
+
+  </div>
+
+</section>
 
 </main>
 
 
-
-<!-- =====================================================
-     DETAILS PAGE
-====================================================== -->
-
-<main id="detailsPage">
-
-
-<button
-class="back-btn"
-onclick="showHome()">
-
-← পেছনে ফিরে যান
-
-</button>
-
-
-<div
-class="details-container"
-id="detailsContainer">
-
-</div>
-
-
 <footer>
-
-বাংলা পত্রিকা ডিরেক্টরি
-
+  বাংলাদেশ পত্রিকা ডিরেক্টরি • Demo Version
 </footer>
-
-
-</main>
-
 
 
 <script>
 
-
-/* =====================================================
-   DEMO DATA
-
-   ভবিষ্যতে এই জায়গায় Google Sheets
-   থেকে ডেটা আনা যাবে।
-====================================================== */
-
+/* ================= DATA ================= */
 
 const newspapers = [
 
 {
-
-id:1,
-
-name:"দৈনিক বাংলা সংবাদ",
-
-category:"দৈনিক",
-
-district:"ঢাকা",
-
-image:
-"https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&w=800&q=80",
-
-description:
-"দৈনিক বাংলা সংবাদ একটি কাল্পনিক উদাহরণ পত্রিকা। এই অংশে পত্রিকাটির ইতিহাস, প্রকাশনার ধরন, সংবাদ কাভারেজ এবং পাঠকদের জন্য প্রয়োজনীয় সংক্ষিপ্ত তথ্য লেখা থাকবে।",
-
-website:
-"https://example.com"
-
+ name:"প্রথম আলো",
+ category:"দৈনিক",
+ district:"ঢাকা",
+ division:"ঢাকা",
+ image:"https://placehold.co/600x400/075e45/ffffff?text=Prothom+Alo",
+ website:"https://www.prothomalo.com",
+ description:"বাংলাদেশের একটি জনপ্রিয় দৈনিক সংবাদপত্র। এটি দেশের বিভিন্ন জাতীয় ও আন্তর্জাতিক সংবাদ প্রকাশ করে।"
 },
 
-
 {
-
-id:2,
-
-name:"সাপ্তাহিক জনতার কণ্ঠ",
-
-category:"সাপ্তাহিক",
-
-district:"রাজশাহী",
-
-image:
-"https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80",
-
-description:
-"সাপ্তাহিক জনতার কণ্ঠ একটি ডেমো পত্রিকা। এখানে পত্রিকাটি কোন ধরনের সংবাদ প্রকাশ করে, কোথা থেকে প্রকাশিত হয় এবং পাঠকদের জন্য কী ধরনের তথ্য প্রদান করে তা সংক্ষেপে লেখা যাবে।",
-
-website:
-"https://example.com"
-
+ name:"ইত্তেফাক",
+ category:"দৈনিক",
+ district:"ঢাকা",
+ division:"ঢাকা",
+ image:"https://placehold.co/600x400/164e8c/ffffff?text=Ittefaq",
+ website:"https://www.ittefaq.com.bd",
+ description:"বাংলাদেশের পরিচিত দৈনিক সংবাদপত্রগুলোর একটি।"
 },
 
-
 {
-
-id:3,
-
-name:"মাসিক জ্ঞানবার্তা",
-
-category:"মাসিক",
-
-district:"নওগাঁ",
-
-image:
-"https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80",
-
-description:
-"মাসিক জ্ঞানবার্তা একটি ডেমো মাসিক প্রকাশনা। এই জায়গায় পত্রিকার বিষয়বস্তু, প্রকাশনার উদ্দেশ্য, পাঠকগোষ্ঠী এবং অন্যান্য গুরুত্বপূর্ণ তথ্য নিয়ে একটি সংক্ষিপ্ত Article থাকবে।",
-
-website:
-"https://example.com"
-
+ name:"যুগান্তর",
+ category:"দৈনিক",
+ district:"ঢাকা",
+ division:"ঢাকা",
+ image:"https://placehold.co/600x400/735016/ffffff?text=Jugantor",
+ website:"https://www.jugantor.com",
+ description:"জাতীয়, রাজনীতি, অর্থনীতি ও বিভিন্ন বিষয়ের সংবাদ প্রকাশ করে।"
 },
 
-
 {
-
-id:4,
-
-name:"ইসলামিক জীবন",
-
-category:"ইসলামিক",
-
-district:"ঢাকা",
-
-image:
-"https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80",
-
-description:
-"ইসলামিক জীবন একটি ডেমো ইসলামিক প্রকাশনা। এখানে ইসলামী শিক্ষা, সমাজ, জীবনযাপন এবং অন্যান্য বিষয় সম্পর্কে প্রকাশনার সংক্ষিপ্ত পরিচিতি দেওয়া যাবে।",
-
-website:
-"https://example.com"
-
+ name:"নয়া দিগন্ত",
+ category:"দৈনিক",
+ district:"ঢাকা",
+ division:"ঢাকা",
+ image:"https://placehold.co/600x400/72263a/ffffff?text=Naya+Digianta",
+ website:"https://www.dailynayadiganta.com",
+ description:"বাংলাদেশের একটি দৈনিক সংবাদপত্র।"
 },
 
-
 {
-
-id:5,
-
-name:"দৈনিক উত্তরবঙ্গ",
-
-category:"দৈনিক",
-
-district:"নওগাঁ",
-
-image:
-"https://images.unsplash.com/photo-1504711331083-9c895941bf81?auto=format&fit=crop&w=800&q=80",
-
-description:
-"দৈনিক উত্তরবঙ্গ একটি ডেমো আঞ্চলিক পত্রিকা। এখানে স্থানীয় সংবাদ, জাতীয় সংবাদ এবং অন্যান্য প্রকাশনার বিষয়ে সংক্ষিপ্ত পরিচিতি দেওয়া যাবে।",
-
-website:
-"https://example.com"
-
+ name:"সাপ্তাহিক সংবাদ",
+ category:"সাপ্তাহিক",
+ district:"রাজশাহী",
+ division:"রাজশাহী",
+ image:"https://placehold.co/600x400/776018/ffffff?text=Weekly",
+ website:"https://example.com",
+ description:"এটি ডেমো ডাটা। পরে প্রকৃত পত্রিকার তথ্য দিয়ে পরিবর্তন করা যাবে।"
 },
 
+{
+ name:"মাসিক জীবন",
+ category:"মাসিক",
+ district:"চট্টগ্রাম",
+ division:"চট্টগ্রাম",
+ image:"https://placehold.co/600x400/38547a/ffffff?text=Monthly",
+ website:"https://example.com",
+ description:"মাসিক প্রকাশনার একটি ডেমো উদাহরণ।"
+},
 
 {
+ name:"ইসলামিক বার্তা",
+ category:"ইসলামিক",
+ district:"বগুড়া",
+ division:"রাজশাহী",
+ image:"https://placehold.co/600x400/17634e/ffffff?text=Islamic",
+ website:"https://example.com",
+ description:"ইসলামিক প্রকাশনার ডেমো উদাহরণ।"
+},
 
-id:6,
+{
+ name:"বাংলা অনলাইন",
+ category:"অনলাইন",
+ district:"সিলেট",
+ division:"সিলেট",
+ image:"https://placehold.co/600x400/374151/ffffff?text=Online",
+ website:"https://example.com",
+ description:"অনলাইন সংবাদমাধ্যমের ডেমো উদাহরণ।"
+},
 
-name:"সাপ্তাহিক নতুন দিগন্ত",
-
-category:"সাপ্তাহিক",
-
-district:"বগুড়া",
-
-image:
-"https://images.unsplash.com/photo-1585241936939-be4099591252?auto=format&fit=crop&w=800&q=80",
-
-description:
-"সাপ্তাহিক নতুন দিগন্ত একটি ডেমো সাপ্তাহিক পত্রিকা। এই অংশে পত্রিকার বিস্তারিত পরিচিতি ও প্রকাশনার বিষয়বস্তু তুলে ধরা যাবে।",
-
-website:
-"https://example.com"
-
+{
+ name:"উত্তরের কণ্ঠ",
+ category:"আঞ্চলিক",
+ district:"নওগাঁ",
+ division:"রাজশাহী",
+ image:"https://placehold.co/600x400/49654f/ffffff?text=Regional",
+ website:"https://example.com",
+ description:"আঞ্চলিক পত্রিকার ডেমো উদাহরণ।"
 }
 
 ];
 
 
+/* ================= PAGE SYSTEM ================= */
 
-/* =====================================================
-   CURRENT CATEGORY
-===================================================== */
+function showPage(page){
 
-let currentCategory = "সব";
+  document.querySelectorAll(".page").forEach(function(p){
+    p.classList.remove("active");
+  });
 
+  document.getElementById(page).classList.add("active");
 
-/* =====================================================
-   DISPLAY NEWSPAPERS
-===================================================== */
-
-function displayNewspapers(list){
-
-const grid =
-document.getElementById("newsGrid");
-
-const empty =
-document.getElementById("emptyResult");
-
-grid.innerHTML = "";
-
-
-if(list.length === 0){
-
-empty.style.display = "block";
-
-document.getElementById("resultCount")
-.innerText = "";
-
-return;
-
-}
-
-empty.style.display = "none";
-
-
-document.getElementById("resultCount")
-.innerText =
-list.length + "টি পত্রিকা";
-
-
-list.forEach(news => {
-
-
-const card =
-document.createElement("div");
-
-card.className = "news-card";
-
-
-card.onclick =
-function(){
-
-openDetails(news.id);
-
-};
-
-
-card.innerHTML = `
-
-<img
-
-class="card-image"
-
-src="${news.image}"
-
-alt="${news.name}"
-
->
-
-<div class="card-body">
-
-<span class="card-category">
-
-${news.category}
-
-</span>
-
-<h3 class="card-title">
-
-${news.name}
-
-</h3>
-
-<div class="card-location">
-
-📍 ${news.district}
-
-</div>
-
-<button
-
-class="details-btn"
-
-onclick="event.stopPropagation(); openDetails(${news.id})">
-
-বিস্তারিত দেখুন →
-
-</button>
-
-</div>
-
-`;
-
-
-grid.appendChild(card);
-
-});
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-/* =====================================================
-   CATEGORY FILTER
-===================================================== */
+/* ================= CARD ================= */
+
+function cardHTML(n){
+
+  return `
+  <article class="card" onclick="openDetails('${n.name}')">
+
+    <div class="card-img">
+      <img src="${n.image}" alt="${n.name}" loading="lazy">
+    </div>
+
+    <div class="card-body">
+
+      <div class="card-name">
+        ${n.name}
+      </div>
+
+      <div class="card-location">
+        📍 ${n.division} • ${n.district}
+      </div>
+
+      <span class="badge">
+        ${n.category}
+      </span>
+
+    </div>
+
+  </article>
+  `;
+
+}
+
+
+/* ================= HOME ================= */
+
+function renderHome(){
+
+  const grid=document.getElementById("homeGrid");
+
+  grid.innerHTML=newspapers
+    .slice(0,8)
+    .map(cardHTML)
+    .join("");
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+function renderCategory(category="সব"){
+
+  const grid=document.getElementById("categoryGrid");
+
+  let data=newspapers;
+
+  if(category!=="সব"){
+    data=newspapers.filter(n=>n.category===category);
+  }
+
+  document.getElementById("categoryTitle").textContent =
+    category==="সব" ? "সকল পত্রিকা" : category+" পত্রিকা";
+
+  if(!data.length){
+
+    grid.innerHTML=
+      `<div class="empty">
+        এই ক্যাটাগরিতে এখনো কোনো পত্রিকা নেই।
+      </div>`;
+
+    return;
+  }
+
+  grid.innerHTML=data.map(cardHTML).join("");
+
+}
+
+
+function openCategory(category){
+
+  showPage("category");
+
+  document.querySelectorAll(".filter").forEach(b=>{
+    b.classList.remove("active");
+  });
+
+  renderCategory(category);
+
+}
+
+
+/* ================= FILTER ================= */
 
 function filterCategory(category,button){
 
-currentCategory = category;
+  document.querySelectorAll(".filter").forEach(b=>{
+    b.classList.remove("active");
+  });
 
+  button.classList.add("active");
 
-document
-.querySelectorAll(".category")
-.forEach(btn => {
-
-btn.classList.remove("active");
-
-});
-
-
-button.classList.add("active");
-
-
-if(category === "সব"){
-
-document.getElementById("categoryTitle")
-.innerText = "সব পত্রিকা";
-
-displayNewspapers(newspapers);
-
-return;
+  renderCategory(category);
 
 }
 
 
-document.getElementById("categoryTitle")
-.innerText =
-category + " পত্রিকা";
+/* ================= DETAILS ================= */
 
+function openDetails(name){
 
-const filtered =
-newspapers.filter(news =>
-news.category === category
-);
+  const n=newspapers.find(x=>x.name===name);
 
+  if(!n)return;
 
-displayNewspapers(filtered);
+  document.getElementById("detailsContent").innerHTML=`
+
+    <div class="details-box">
+
+      <div class="details-image">
+        <img src="${n.image}" alt="${n.name}">
+      </div>
+
+      <div class="details-content">
+
+        <div class="details-name">
+          ${n.name}
+        </div>
+
+        <div class="details-meta">
+          ${n.category} • 📍 ${n.district}, ${n.division}
+        </div>
+
+        <div class="details-description">
+
+          <h3 style="color:var(--text);margin-bottom:8px">
+            পত্রিকা সম্পর্কে
+          </h3>
+
+          ${n.description}
+
+        </div>
+
+        <button
+          class="main-button"
+          onclick="visitWebsite('${n.website}')">
+
+          🌐 পত্রিকাটি পড়ুন
+
+        </button>
+
+        <button
+          class="share-button"
+          onclick="shareNewspaper('${n.name}')">
+
+          ↗️ শেয়ার করুন
+
+        </button>
+
+      </div>
+
+    </div>
+  `;
+
+  showPage("details");
 
 }
 
 
-/* =====================================================
-   SEARCH
-===================================================== */
+function visitWebsite(url){
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
+/* ================= SHARE ================= */
+
+function shareNewspaper(name){
+
+  if(navigator.share){
+
+    navigator.share({
+      title:name,
+      text:name+" — বাংলাদেশ পত্রিকা ডিরেক্টরি"
+    });
+
+  }else{
+
+    alert("আপনার ফোনে Share অপশনটি ব্যবহার করে শেয়ার করুন।");
+
+  }
+
+}
+
+
+/* ================= SEARCH ================= */
 
 function searchNewspapers(){
 
-const query =
-document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+  const q=document
+    .getElementById("globalSearch")
+    .value
+    .trim()
+    .toLowerCase();
 
+  if(!q){
 
-let results =
-newspapers.filter(news => {
+    if(document.getElementById("searchPage").classList.contains("active")){
+      showPage("home");
+    }
 
-const matchName =
-news.name
-.toLowerCase()
-.includes(query);
+    return;
+  }
 
-const matchDistrict =
-news.district
-.toLowerCase()
-.includes(query);
+  const result=newspapers.filter(n=>
 
-return matchName || matchDistrict;
+    n.name.toLowerCase().includes(q) ||
+    n.category.toLowerCase().includes(q) ||
+    n.district.toLowerCase().includes(q) ||
+    n.division.toLowerCase().includes(q)
 
-});
+  );
 
+  document.getElementById("searchText").textContent =
+    `"${q}" — ${result.length}টি ফলাফল`;
 
-if(currentCategory !== "সব"){
+  const grid=document.getElementById("searchGrid");
 
-results =
-results.filter(news =>
-news.category === currentCategory
-);
+  if(!result.length){
+
+    grid.innerHTML=
+      `<div class="empty">
+        কোনো পত্রিকা পাওয়া যায়নি।
+        <br>
+        অন্য নাম, জেলা বা ক্যাটাগরি দিয়ে চেষ্টা করুন।
+      </div>`;
+
+  }else{
+
+    grid.innerHTML=result.map(cardHTML).join("");
+
+  }
+
+  showPage("searchPage");
 
 }
 
 
-displayNewspapers(results);
+/* ================= LOCATION ================= */
+
+function openLocation(area){
+
+  showPage("location");
+
+  document.getElementById("locationResults").innerHTML=`
+
+    <div class="section">
+
+      <div class="section-head">
+        <h2>📍 ${area} এলাকার পত্রিকা</h2>
+      </div>
+
+      <div class="newspaper-grid">
+
+        ${
+          newspapers
+          .filter(n=>n.division===area || n.district===area)
+          .map(cardHTML)
+          .join("")
+          ||
+          `<div class="empty">
+             এই এলাকার ডেমো তালিকায় এখনো কোনো পত্রিকা নেই।
+           </div>`
+        }
+
+      </div>
+
+    </div>
+
+  `;
 
 }
 
 
-/* =====================================================
-   LIVE SEARCH
-===================================================== */
+function showDivision(division){
 
-document
-.getElementById("searchInput")
-.addEventListener(
-"input",
-searchNewspapers
-);
-
-
-/* =====================================================
-   OPEN DETAILS
-===================================================== */
-
-function openDetails(id){
-
-const news =
-newspapers.find(item =>
-item.id === id
-);
-
-
-if(!news) return;
-
-
-document
-.getElementById("homePage")
-.style.display = "none";
-
-
-document
-.getElementById("detailsPage")
-.style.display = "block";
-
-
-document
-.getElementById("detailsContainer")
-.innerHTML = `
-
-<img
-
-class="details-cover"
-
-src="${news.image}"
-
-alt="${news.name}"
-
->
-
-
-<div class="details-content">
-
-
-<span class="details-category">
-
-${news.category}
-
-</span>
-
-
-<h1 class="details-title">
-
-${news.name}
-
-</h1>
-
-
-<div class="details-meta">
-
-📍 জেলা: ${news.district}
-
-<br>
-
-📰 ধরন: ${news.category}
-
-<br>
-
-📌 প্রকাশনা: সংবাদ ও তথ্য
-
-</div>
-
-
-<div class="article">
-
-<h3>
-
-পত্রিকাটি সম্পর্কে
-
-</h3>
-
-<p>
-
-${news.description}
-
-</p>
-
-</div>
-
-
-<a
-
-class="read-btn"
-
-href="${news.website}"
-
-target="_blank"
-
-rel="noopener">
-
-📖 পত্রিকাটি পড়ুন →
-
-</a>
-
-
-</div>
-
-`;
-
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
+  openLocation(division);
 
 }
 
 
-/* =====================================================
-   BACK HOME
-===================================================== */
+/* ================= ADD FORM ================= */
 
-function showHome(){
+function submitForm(){
 
-document
-.getElementById("detailsPage")
-.style.display = "none";
+  const name=document.getElementById("addName").value.trim();
 
+  if(!name){
 
-document
-.getElementById("homePage")
-.style.display = "block";
+    alert("দয়া করে পত্রিকার নাম লিখুন।");
+    return;
 
+  }
 
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
+  alert(
+    "ডেমো সফল হয়েছে।\n\n"+
+    "পরবর্তী ধাপে এই ফর্মটি Google Form/Google Sheets-এর সঙ্গে যুক্ত করা যাবে।"
+  );
 
 }
 
 
-/* =====================================================
-   DARK MODE
-===================================================== */
+/* ================= DARK MODE ================= */
 
-function toggleDarkMode(){
+function toggleDark(){
 
-document
-.body
-.classList
-.toggle("dark");
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark")
+      ? "1"
+      : "0"
+  );
 
 }
 
 
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
+if(localStorage.getItem("darkMode")==="1"){
+  document.body.classList.add("dark");
+}
 
-displayNewspapers(newspapers);
+
+/* ================= START ================= */
+
+renderHome();
+renderCategory();
 
 </script>
 
