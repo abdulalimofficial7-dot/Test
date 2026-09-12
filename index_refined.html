@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="বাংলাদেশের সংবাদপত্র ও সাময়িকীর তথ্যভিত্তিক ডিরেক্টরি">
+<title>বাংলাদেশ সংবাদপত্র ডিরেক্টরি</title>
+<style>
+:root{--navy:#082c46;--teal:#087f72;--green:#16a085;--bg:#f5f8fa;--card:#fff;--text:#163042;--muted:#6b7b87;--line:#e2e9ee;--soft:#edf6f4;--shadow:0 8px 28px rgba(8,44,70,.08);--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali","Noto Sans",sans-serif}body.dark{--bg:#0c1720;--card:#12222e;--text:#eaf3f7;--muted:#9db0bc;--line:#263b49;--soft:#17352f;--shadow:0 8px 28px rgba(0,0,0,.25)}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}body.dark .header{background:rgba(12,23,32,.94)}.nav{height:66px;max-width:1180px;margin:auto;padding:0 14px;display:flex;align-items:center;gap:10px}.brand{display:flex;align-items:center;gap:9px;font-weight:900;color:var(--navy);min-width:0}.dark .brand{color:#dff7f1}.brandIcon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;font-weight:900;flex:none}.brandText{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.navActions{margin-left:auto;display:flex;gap:7px}.icon{width:40px;height:40px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:12px}.drawer{position:fixed;inset:0;z-index:200;display:none}.drawer.open{display:block}.drawerShade{position:absolute;inset:0;background:rgba(0,0,0,.45)}.drawerPanel{position:absolute;left:0;top:0;bottom:0;width:min(310px,86vw);background:var(--card);padding:20px;box-shadow:20px 0 50px rgba(0,0,0,.18)}.drawerPanel h3{margin:8px 0 18px}.menuItem{display:block;width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:13px 10px;border-radius:12px}.menuItem:hover{background:var(--soft)}
+.notice{background:var(--navy);color:#fff;font-size:13px}.noticeInner{max-width:1180px;margin:auto;padding:7px 14px;display:flex;gap:8px;align-items:center;overflow:hidden}.noticeInner span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+main{max-width:1180px;margin:auto;padding:18px 14px 100px}.hero{background:linear-gradient(135deg,#082c46,#087f72 70%,#16a085);color:#fff;border-radius:26px;padding:28px 20px;box-shadow:var(--shadow)}.hero h1{font-size:clamp(26px,6vw,46px);margin:0 0 8px;line-height:1.15}.hero p{margin:0;opacity:.94;line-height:1.75}.search{margin-top:18px;background:#fff;padding:7px;border-radius:15px;display:flex;gap:7px}.search input{border:0;outline:0;min-width:0;flex:1;padding:11px 12px;color:#173042;background:#fff}.search button{border:0;border-radius:11px;padding:0 16px;background:var(--teal);color:#fff;font-weight:800}
+.section{margin-top:25px}.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.sectionHead h2{font-size:20px;margin:0}.sectionHead small{color:var(--muted)}.scroll{display:flex;gap:8px;overflow:auto;padding-bottom:4px}.chip{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:9px 13px}.chip.active,.chip:hover{background:var(--teal);border-color:var(--teal);color:#fff}.divisionGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.division{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px;text-align:center;font-weight:750}.division span{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+.filters{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.filters select{width:100%;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:11px;padding:10px;outline:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:.18s}.card:hover{transform:translateY(-2px)}.logo{height:145px;background:linear-gradient(180deg,var(--soft),rgba(127,127,127,.04));display:grid;place-items:center;padding:15px}.logo img{max-width:100%;max-height:115px;object-fit:contain}.placeholder{width:70px;height:70px;border-radius:20px;background:#dcebe7;color:var(--teal);display:grid;place-items:center;font-size:25px;font-weight:900}.cardBody{padding:13px}.cardBody h3{font-size:17px;margin:0 0 7px}.meta{display:flex;flex-wrap:wrap;gap:5px}.badge{font-size:11px;padding:5px 8px;border-radius:999px;background:var(--soft);color:var(--teal)}.desc{font-size:13px;line-height:1.65;color:var(--muted);margin:9px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.cardBtn{margin-top:10px;width:100%;border:0;border-radius:10px;padding:9px;background:var(--teal);color:#fff;font-weight:750}.empty{grid-column:1/-1;background:var(--card);border:1px dashed var(--line);border-radius:18px;padding:28px;text-align:center;color:var(--muted)}
+.pagination{display:flex;justify-content:center;gap:7px;margin-top:18px;flex-wrap:wrap}.page{min-width:38px;height:38px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px}.page.active{background:var(--navy);color:#fff;border-color:var(--navy)}.cta{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;text-align:center;box-shadow:var(--shadow)}.cta h2{margin:0 0 7px}.cta p{color:var(--muted);margin:0 0 14px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:11px 16px;font-weight:800}.primary{background:var(--teal);color:#fff}.secondary{background:var(--soft);color:var(--text)}.promo{margin-top:18px;border-radius:20px;padding:20px;background:linear-gradient(135deg,var(--navy),#0b655e);color:#fff}.promo p{line-height:1.7;opacity:.92}
+.footer{margin-top:36px;border-top:1px solid var(--line);padding-top:24px;color:var(--muted);font-size:13px}.footerGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.footer h3{color:var(--text);font-size:15px;margin:0 0 9px}.footer a{display:block;margin:6px 0}.bottom{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}.dark .bottom{background:rgba(12,23,32,.96)}.bottom button{border:0;background:transparent;color:var(--muted);padding:8px 3px;font-size:11px}.bottom b{display:block;font-size:18px;color:var(--text)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:300;display:none;padding:14px;overflow:auto}.modal.open{display:flex;align-items:center;justify-content:center}.modalBox{width:min(760px,100%);max-height:92vh;overflow:auto;background:var(--card);color:var(--text);border-radius:22px;box-shadow:0 25px 80px rgba(0,0,0,.25)}.modalTop{display:flex;justify-content:flex-end;padding:9px 9px 0}.close{width:38px;height:38px;border:0;border-radius:10px;background:var(--soft);color:var(--text)}.detailHead{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:8px 20px 20px}.detailLogo{height:150px;border-radius:17px;background:var(--soft);display:grid;place-items:center;padding:14px}.detailLogo img{max-width:100%;max-height:125px;object-fit:contain}.detailHead h2{margin:8px 0}.detailBody{padding:0 20px 24px}.detailBody p{line-height:1.85;color:var(--muted)}.infoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:15px 0}.info{border:1px solid var(--line);border-radius:13px;padding:10px}.info b{display:block;font-size:11px;color:var(--muted);margin-bottom:3px}.actions{display:flex;flex-wrap:wrap;gap:8px}.loading{padding:25px;text-align:center;color:var(--muted)}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.divisionGrid{grid-template-columns:repeat(4,1fr)}.footerGrid{grid-template-columns:repeat(4,1fr)}main{padding-left:20px;padding-right:20px}.bottom{display:none}}
+@media(max-width:620px){.filters{grid-template-columns:1fr}.detailHead{grid-template-columns:1fr}.detailLogo{height:180px}.detailLogo img{max-height:155px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.divisionGrid{grid-template-columns:repeat(2,1fr)}.brandText{font-size:14px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="nav"><button class="icon" aria-label="menu" onclick="openDrawer()">☰</button><a class="brand" href="#" onclick="goHome();return false"><span class="brandIcon">প</span><span class="brandText">বাংলাদেশ সংবাদপত্র ডিরেক্টরি</span></a><div class="navActions"><button class="icon" onclick="toggleLang()" title="ভাষা">A</button><button class="icon" onclick="toggleTheme()" title="ডার্ক মোড">◐</button></div></div></header>
+<div class="notice"><div class="noticeInner"><span>●</span><span id="noticeText">বাংলাদেশের সংবাদপত্র ও সাময়িকীর তথ্য এক জায়গায়</span></div></div>
+<div id="drawer" class="drawer"><div class="drawerShade" onclick="closeDrawer()"></div><aside class="drawerPanel"><button class="icon" onclick="closeDrawer()">×</button><h3>মেনু</h3><button class="menuItem" onclick="goHome();closeDrawer()">⌂ হোম</button><button class="menuItem" onclick="showAll();closeDrawer()">▦ সব পত্রিকা</button><button class="menuItem" onclick="focusSearch();closeDrawer()">⌕ অনুসন্ধান</button><button class="menuItem" onclick="showAbout();closeDrawer()">ⓘ ডিরেক্টরি সম্পর্কে</button><a class="menuItem" href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank">＋ পত্রিকা যোগ করুন</a></aside></div>
+<main>
+<section id="homeView">
+<div class="hero"><h1>বাংলাদেশের সংবাদপত্র</h1><p>পত্রিকার নাম, বিভাগ, জেলা, প্রকাশনার ধরন বা ক্যাটাগরি দিয়ে খুঁজুন।</p><div class="search"><input id="heroSearch" placeholder="পত্রিকার নাম, জেলা, ক্যাটাগরি..." oninput="searchLive(this.value)" onkeydown="if(event.key==='Enter')focusSearch()"><button onclick="focusSearch()">খুঁজুন</button></div></div>
+<div class="section"><div class="sectionHead"><h2>প্রকাশনার ধরন</h2><small id="totalCount">লোড হচ্ছে...</small></div><div id="frequencyChips" class="scroll"></div></div>
+<div class="section"><div class="sectionHead"><h2>ক্যাটাগরি</h2><button class="chip" onclick="clearCategory()">সব</button></div><div id="categoryChips" class="scroll"></div></div>
+<div class="section"><div class="sectionHead"><h2>বিভাগ অনুযায়ী</h2><small>বাংলাদেশ</small></div><div id="divisionGrid" class="divisionGrid"></div></div>
+<div class="section"><div class="sectionHead"><h2>জনপ্রিয় / সাম্প্রতিক</h2><button class="chip" onclick="showAll()">সব দেখুন</button></div><div id="popularGrid" class="grid"></div></div>
+<div class="section"><div class="sectionHead"><h2>সব পত্রিকা</h2><small id="homeResult"></small></div><div id="homeGrid" class="grid"></div><div id="homePagination" class="pagination"></div></div>
+<div class="cta"><h2>আপনার পত্রিকা কি তালিকায় নেই?</h2><p>তথ্য পাঠিয়ে ডিরেক্টরিতে পত্রিকা যোগ করতে পারেন।</p><a class="btn primary" href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank">পত্রিকা যোগ করুন</a></div>
+<div class="promo"><h2>এক জায়গায় বাংলাদেশের সংবাদপত্র</h2><p>দৈনিক, সাপ্তাহিক, মাসিক, ইসলামিক, আঞ্চলিক ও অনলাইন পত্রিকার তথ্য সহজে খুঁজে নিন এবং সরাসরি অফিসিয়াল ওয়েবসাইটে যান।</p></div>
+</section>
+<section id="allView" style="display:none"><div class="sectionHead"><h2>সব সংবাদপত্র</h2><button class="chip" onclick="goHome()">← হোম</button></div><div class="filters"><select id="fFrequency" onchange="applyFilters()"><option value="">সব প্রকাশনা</option></select><select id="fCategory" onchange="applyFilters()"><option value="">সব ক্যাটাগরি</option></select><select id="fDivision" onchange="applyFilters()"><option value="">সব বিভাগ</option></select></div><div class="section"><div class="sectionHead"><h2>ফলাফল</h2><small id="allResult"></small></div><div id="allGrid" class="grid"></div><div id="allPagination" class="pagination"></div></div></section>
+<section id="searchView" style="display:none"><div class="sectionHead"><h2>পত্রিকা অনুসন্ধান</h2><button class="chip" onclick="goHome()">← হোম</button></div><div class="search" style="border:1px solid var(--line);box-shadow:var(--shadow)"><input id="searchInput" placeholder="নাম, বিভাগ, জেলা, ক্যাটাগরি, tag..." oninput="runSearch(this.value)"></div><div class="section"><div id="searchGrid" class="grid"></div></div></section>
+<section id="aboutView" style="display:none"><div class="sectionHead"><h2>ডিরেক্টরি সম্পর্কে</h2><button class="chip" onclick="goHome()">← হোম</button></div><div class="cta" style="text-align:left"><h2>বাংলাদেশ সংবাদপত্র ডিরেক্টরি</h2><p>এই ওয়েবসাইটে সংবাদপত্র ও সাময়িকীর নাম, প্রকাশনার ধরন, ক্যাটাগরি, বিভাগ, জেলা, ওয়েবসাইট, লোগো ও সংক্ষিপ্ত তথ্য Google Sheet থেকে নেওয়া হয়। কোনো ঘর খালি থাকলে সেই তথ্যের UI অংশ দেখানো হয় না।</p><p>মূল সংবাদ পড়ার জন্য সংশ্লিষ্ট পত্রিকার অফিসিয়াল ওয়েবসাইটে প্রবেশ করুন।</p></div></section>
+<footer class="footer"><div class="footerGrid"><div><h3>ডিরেক্টরি</h3><a href="#" onclick="goHome();return false">হোম</a><a href="#" onclick="showAll();return false">সব পত্রিকা</a></div><div><h3>ক্যাটাগরি</h3><div id="footerCategories"></div></div><div><h3>তথ্য</h3><a href="#" onclick="showAbout();return false">আমাদের সম্পর্কে</a><a href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank">পত্রিকা যোগ করুন</a></div><div><h3>ডাটা</h3><span>Google Sheet ভিত্তিক</span><br><span id="lastUpdated">—</span></div></div><p style="margin-top:22px">© <span id="year"></span> বাংলাদেশ সংবাদপত্র ডিরেক্টরি</p></footer>
+</main>
+<nav class="bottom"><button onclick="goHome()"><b>⌂</b>হোম</button><button onclick="showAll()"><b>▦</b>পত্রিকা</button><button onclick="focusSearch()"><b>⌕</b>খুঁজুন</button><button onclick="showAbout()"><b>ⓘ</b>তথ্য</button></nav>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modalBox"><div class="modalTop"><button class="close" onclick="closeModal()">×</button></div><div id="detail"></div></div></div>
+<div id="status" class="status" style="position:fixed;right:12px;bottom:62px;z-index:150;background:var(--navy);color:#fff;padding:9px 13px;border-radius:999px;font-size:12px;display:none">সংযোগ হচ্ছে...</div>
+<script>
+const APPS_SCRIPT_URL="https://script.google.com/macros/s/AKfycbzEuKc60X6KDIC3dmjUmxA_0XNbivriwKbm3ZGCol9oi0EkfEpNuABibklarI8gLHfn/exec";
+const FORM_URL="https://forms.gle/378WKzkQqqkqBRjt5";
+const PER_PAGE=20;
+const COLUMNS={id:"ID",regno:"RegNo",name:"Name",language:"Language",frequency:"Frequency",category:"Category",country:"Country",division:"Division",district:"District",upazila:"Upazila",logo:"LogoURL",description:"Description",website:"Website",tags:"Tags",pdf:"Pdf",status:"Status"};
+let allNewspapers=[],filtered=[],currentPage=1,currentMode="home",currentCategory="",currentFrequency="";
+const $=id=>document.getElementById(id);
+function getField(o,k){
+  if(!o)return "";
+  const key=COLUMNS[k]||k;
+  const direct=o[key]??o[k];
+  if(direct!==undefined&&direct!==null)return String(direct).trim();
+  const wanted=norm(key);
+  const found=Object.keys(o).find(x=>norm(x)===wanted);
+  return found?String(o[found]??"").trim():"";
+}
+function norm(s){return String(s??"").trim().toLowerCase().replace(/\s+/g," ")}
+function splitValues(s){return String(s||"").split(/[,|;]+/).map(x=>x.trim()).filter(Boolean)}
+function firstName(s){return String(s||"প").trim().charAt(0)||"প"}
+function safeUrl(url){try{let raw=String(url??"").trim();if(!raw)return "";if(!/^https?:\/\//i.test(raw))raw="https://"+raw;let u=new URL(raw);return /^https?:$/.test(u.protocol)?u.href:""}catch{return ""}}
+function setStatus(msg,ok=false){let e=$("status");e.textContent=msg;e.style.display="block";e.style.background=ok?"#147a58":"#082c46";clearTimeout(window.statusTimer);window.statusTimer=setTimeout(()=>e.style.display="none",2600)}
+function showView(id){["homeView","allView","searchView","aboutView"].forEach(x=>$(x).style.display=x===id?"block":"none");window.scrollTo({top:0,behavior:"smooth"})}
+function goHome(){currentMode="home";showView("homeView");currentPage=1;applyHome()}
+function showAll(){currentMode="all";showView("allView");currentPage=1;applyFilters()}
+function showAbout(){showView("aboutView")}
+function focusSearch(){currentMode="search";showView("searchView");setTimeout(()=>$("searchInput").focus(),100)}
+function openDrawer(){$("drawer").classList.add("open")}function closeDrawer(){$("drawer").classList.remove("open")}
+function toggleTheme(){document.body.classList.toggle("dark");localStorage.setItem("newsTheme",document.body.classList.contains("dark")?"dark":"light")}
+function toggleLang(){alert("বাংলা / English ভাষা ব্যবস্থা পরবর্তী ধাপে যুক্ত করা যাবে।")}
+function cardHTML(item){const name=getField(item,"name")||"নাম নেই",logo=safeUrl(getField(item,"logo")),website=safeUrl(getField(item,"website"));let badges=[getField(item,"frequency"),getField(item,"category"),getField(item,"division")].filter(Boolean);return `<article class="card"><div class="logo">${logo?`<img src="${esc(logo)}" alt="${esc(name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">`:''}<div class="placeholder" style="${logo?'display:none':''}">${esc(firstName(name))}</div></div><div class="cardBody"><h3>${esc(name)}</h3><div class="meta">${badges.map(x=>`<span class="badge">${esc(x)}</span>`).join("")}</div>${getField(item,"description")?`<p class="desc">${esc(getField(item,"description"))}</p>`:""}<button class="cardBtn" onclick="openDetails(${allNewspapers.indexOf(item)})">বিস্তারিত দেখুন</button>${website?`<a class="btn secondary" style="width:100%;margin-top:7px" href="${esc(website)}" target="_blank" rel="noopener">পত্রিকাটি পড়ুন ↗</a>`:""}</div></article>`}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderGrid(id,items){$(id).innerHTML=items.length?items.map(cardHTML).join(""):`<div class="empty">কোনো পত্রিকার তথ্য পাওয়া যায়নি।</div>`}
+function paginate(items,page,gridId,pagId,countId){const pages=Math.max(1,Math.ceil(items.length/PER_PAGE));currentPage=Math.min(page,pages);const start=(currentPage-1)*PER_PAGE;renderGrid(gridId,items.slice(start,start+PER_PAGE));if(countId)$(countId).textContent=`${items.length}টি ফলাফল`;let p=$(pagId);p.innerHTML=pages<=1?"":Array.from({length:pages},(_,i)=>`<button class="page ${i+1===currentPage?'active':''}" onclick="currentPage=${i+1};${gridId==='homeGrid'?'applyHome()':'applyFilters()'}">${i+1}</button>`).join("")}
+function matches(item,term){if(!term)return true;let text=["name","language","frequency","category","division","district","upazila","tags","description"].map(k=>getField(item,k)).join(" ");return norm(text).includes(norm(term))}
+function applyHome(){let items=allNewspapers.filter(x=>(!currentFrequency||splitValues(getField(x,"frequency")).some(v=>norm(v)===norm(currentFrequency)))&&(!currentCategory||splitValues(getField(x,"category")).some(v=>norm(v)===norm(currentCategory))));filtered=items;$('homeResult').textContent=`${items.length}টি`;paginate(items,currentPage,"homeGrid","homePagination");renderPopular()}
+function applyFilters(){let freq=$("fFrequency").value,cat=$("fCategory").value,div=$("fDivision").value;let items=allNewspapers.filter(x=>(!freq||splitValues(getField(x,"frequency")).some(v=>norm(v)===norm(freq)))&&(!cat||splitValues(getField(x,"category")).some(v=>norm(v)===norm(cat)))&&(!div||norm(getField(x,"division"))===norm(div)));filtered=items;paginate(items,currentPage,"allGrid","allPagination","allResult")}
+function runSearch(term){currentPage=1;let items=allNewspapers.filter(x=>matches(x,term));renderGrid("searchGrid",items);$("searchInput").value=term}
+function searchLive(term){if(term.trim())runSearch(term);else applyHome()}
+function clearCategory(){currentCategory="";currentPage=1;document.querySelectorAll("#categoryChips .chip").forEach(x=>x.classList.remove("active"));applyHome()}
+function selectCategory(v,el){currentCategory=v;currentPage=1;document.querySelectorAll("#categoryChips .chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");applyHome()}
+function selectFrequency(v,el){currentFrequency=v;currentPage=1;document.querySelectorAll("#frequencyChips .chip").forEach(x=>x.classList.remove("active"));el.classList.add("active");applyHome()}
+function buildChips(){let freqs=[...new Set(allNewspapers.flatMap(x=>splitValues(getField(x,"frequency"))))].filter(Boolean),cats=[...new Set(allNewspapers.flatMap(x=>splitValues(getField(x,"category"))))].filter(Boolean);$("frequencyChips").innerHTML=`<button class="chip active" onclick="selectFrequency('',this)">সব</button>`+freqs.map(x=>`<button class="chip" onclick="selectFrequency('${attr(x)}',this)">${esc(x)}</button>`).join("");$("categoryChips").innerHTML=cats.length?cats.map(x=>`<button class="chip" onclick="selectCategory('${attr(x)}',this)">${esc(x)}</button>`).join(""):``;$("fFrequency").innerHTML='<option value="">সব প্রকাশনা</option>'+freqs.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");$("fCategory").innerHTML='<option value="">সব ক্যাটাগরি</option>'+cats.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");$("footerCategories").innerHTML=cats.slice(0,10).map(x=>`<a href="#" onclick="currentCategory='${attr(x)}';showAll();return false">${esc(x)}</a>`).join("")}
+function attr(s){return String(s??"").replace(/\\/g,"\\\\").replace(/'/g,"\\'")}
+function buildDivisions(){let ds=[...new Set(allNewspapers.map(x=>getField(x,"division")).filter(Boolean))];$("divisionGrid").innerHTML=ds.map(d=>{let n=allNewspapers.filter(x=>norm(getField(x,"division"))===norm(d)).length;return `<button class="division" onclick="$('fDivision').value='${attr(d)}';showAll()">${esc(d)}<span>${n}টি পত্রিকা</span></button>`}).join("")||'<div class="empty">বিভাগের তথ্য নেই।</div>';$('fDivision').innerHTML='<option value="">সব বিভাগ</option>'+ds.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("")}
+function renderPopular(){renderGrid("popularGrid",allNewspapers.slice(0,4))}
+function openDetails(index){let item=allNewspapers[index];if(!item)return;let name=getField(item,"name")||"নাম নেই",logo=safeUrl(getField(item,"logo")),website=safeUrl(getField(item,"website")),pdf=safeUrl(getField(item,"pdf"));let infos=[["প্রকাশনা",getField(item,"frequency")],["ক্যাটাগরি",getField(item,"category")],["ভাষা",getField(item,"language")],["বিভাগ",getField(item,"division")],["জেলা",getField(item,"district")],["উপজেলা/থানা",getField(item,"upazila")],["রেজিস্ট্রেশন",getField(item,"regno")],["দেশ",getField(item,"country")]].filter(x=>x[1]);$("detail").innerHTML=`<div class="detailHead"><div class="detailLogo">${logo?`<img src="${esc(logo)}" alt="${esc(name)}" onerror="this.style.display='none'">`:`<div class="placeholder">${esc(firstName(name))}</div>`}</div><div><div class="meta">${[getField(item,"frequency"),getField(item,"category"),getField(item,"division")].filter(Boolean).map(x=>`<span class="badge">${esc(x)}</span>`).join("")}</div><h2>${esc(name)}</h2><div class="actions">${website?`<a class="btn primary" href="${esc(website)}" target="_blank" rel="noopener">পত্রিকাটি পড়ুন ↗</a>`:""}${pdf?`<a class="btn secondary" href="${esc(pdf)}" target="_blank" rel="noopener">PDF ↗</a>`:""}<button class="btn secondary" onclick="shareItem('${attr(name)}','${attr(website)}')">শেয়ার</button></div></div></div><div class="detailBody">${getField(item,"description")?`<p>${esc(getField(item,"description"))}</p>`:""}${infos.length?`<div class="infoGrid">${infos.map(x=>`<div class="info"><b>${esc(x[0])}</b>${esc(x[1])}</div>`).join("")}</div>`:""}${getField(item,"tags")?`<p><b>Tags:</b> ${esc(getField(item,"tags"))}</p>`:""}</div>`;$("modal").classList.add("open")}
+function closeModal(){$("modal").classList.remove("open")}
+async function shareItem(name,url){if(navigator.share){try{await navigator.share({title:name,url:url||location.href})}catch{}}else{await navigator.clipboard?.writeText(url||location.href);alert("লিংক কপি করা হয়েছে।")}}
+function normalizeRows(data){
+  if(Array.isArray(data))return data;
+  if(data&&Array.isArray(data.data))return data.data;
+  if(data&&Array.isArray(data.rows)&&Array.isArray(data.headers))return data.rows.map(row=>Object.fromEntries(data.headers.map((h,i)=>[h,row[i]])));
+  return [];
+}
+function loadJSONP(){return new Promise((resolve,reject)=>{
+  let cb="sheetCallback_"+Date.now()+Math.random().toString(16).slice(2),script=document.createElement("script"),done=false;
+  const finish=(ok,value)=>{if(done)return;done=true;clearTimeout(timer);delete window[cb];script.remove();ok?resolve(value):reject(value)};
+  let timer=setTimeout(()=>finish(false,new Error("JSONP timeout")),15000);
+  window[cb]=data=>finish(true,data);
+  script.onerror=()=>finish(false,new Error("JSONP error"));
+  script.src=APPS_SCRIPT_URL+(APPS_SCRIPT_URL.includes("?")?"&":"?")+"prefix="+encodeURIComponent(cb)+"&callback="+encodeURIComponent(cb);
+  document.body.appendChild(script);
+})}
+async function loadNewspapers(){
+  setStatus("তথ্য লোড হচ্ছে...");
+  let data=null,lastError=null;
+  try{
+    const res=await fetch(APPS_SCRIPT_URL,{method:"GET",redirect:"follow",cache:"no-store"});
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    data=normalizeRows(await res.json());
+    if(!data.length)throw new Error("empty data");
+  }catch(e){lastError=e}
+  if(!data||!data.length){
+    try{data=normalizeRows(await loadJSONP());if(!data.length)throw new Error("empty JSONP data")}catch(e){lastError=e}
+  }
+  if(!data||!data.length){
+    allNewspapers=[];
+    setStatus("ডাটা লোড হয়নি — সংযোগ পরীক্ষা করুন");
+    $("totalCount").textContent="সংযোগ পাওয়া যায়নি";
+    $("homeGrid").innerHTML='<div class="empty">তথ্য লোড করা যাচ্ছে না। সংযোগটি পরীক্ষা করে আবার চেষ্টা করুন।</div>';
+    console.error("Data service error:",lastError);
+    return;
+  }
+  allNewspapers=data.filter(x=>{
+    const s=norm(getField(x,"status"));
+    return !s||["live","active","published","yes","1"].includes(s);
+  });
+  buildChips();buildDivisions();$("totalCount").textContent=`${allNewspapers.length}টি পত্রিকা`;$("lastUpdated").textContent="সর্বশেষ লোড: "+new Date().toLocaleString("bn-BD");currentPage=1;applyHome();setStatus(`${allNewspapers.length}টি পত্রিকার তথ্য লোড হয়েছে`,true);
+}
+window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+if(localStorage.getItem("newsTheme")==="dark")document.body.classList.add("dark");$("year").textContent=new Date().getFullYear();loadNewspapers();
+</script>
+</body></html>
